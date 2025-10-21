@@ -11,11 +11,14 @@
     CMS.init({
       config: {
         backend: {
-          name: 'git-gateway',
+          name: 'github',
+          repo: 'enislutaf/pixelwave-studio',
           branch: 'main'
         },
         media_folder: 'images',
         public_folder: '/images',
+        site_url: 'https://pixel-waves.netlify.app',
+        display_url: 'https://pixel-waves.netlify.app',
         collections: [
           {
             name: 'team',
