@@ -1,1 +1,5 @@
+# Allow config.yml to be served directly
+/config.yml    /config.yml   200
+
+# Redirect everything else to index.html
 /*    /index.html   200
