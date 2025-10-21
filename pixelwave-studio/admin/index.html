@@ -11,7 +11,61 @@
   <script>
     CMS.init({
       config: {
-        load_config_file: true
+        backend: {
+          name: 'github',
+          repo: 'enislutaf/pixelwave-studio',
+          branch: 'main'
+        },
+        media_folder: 'images',
+        public_folder: '/images',
+        site_url: 'https://pixel-waves.netlify.app',
+        display_url: 'https://pixel-waves.netlify.app',
+        collections: [
+          {
+            name: 'team',
+            label: 'Team Members',
+            folder: 'content/team',
+            create: true,
+            fields: [
+              { label: 'Name', name: 'name', widget: 'string' },
+              { label: 'Role', name: 'role', widget: 'string' },
+              { label: 'Experience', name: 'experience', widget: 'string' },
+              { label: 'Bio', name: 'bio', widget: 'text' },
+              { label: 'Image', name: 'image', widget: 'image' },
+              { label: 'Skills', name: 'skills', widget: 'list', field: { label: 'Skill', name: 'skill', widget: 'string' } },
+              { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false },
+              { label: 'Twitter', name: 'twitter', widget: 'string', required: false }
+            ]
+          },
+          {
+            name: 'portfolio',
+            label: 'Portfolio Items',
+            folder: 'content/portfolio',
+            create: true,
+            fields: [
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Category', name: 'category', widget: 'string' },
+              { label: 'Description', name: 'description', widget: 'text' },
+              { label: 'Thumbnail', name: 'thumbnail', widget: 'image' },
+              { label: 'Video URL', name: 'video_url', widget: 'string' },
+              { label: 'Client', name: 'client', widget: 'string' },
+              { label: 'Year', name: 'year', widget: 'number' }
+            ]
+          },
+          {
+            name: 'testimonials',
+            label: 'Testimonials',
+            folder: 'content/testimonials',
+            create: true,
+            fields: [
+              { label: 'Client Name', name: 'client_name', widget: 'string' },
+              { label: 'Company', name: 'company', widget: 'string' },
+              { label: 'Quote', name: 'quote', widget: 'text' },
+              { label: 'Rating', name: 'rating', widget: 'number', min: 1, max: 5 },
+              { label: 'Avatar', name: 'avatar', widget: 'image', required: false }
+            ]
+          }
+        ]
       }
     });
   </script>
